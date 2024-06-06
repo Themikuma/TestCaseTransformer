@@ -7,14 +7,15 @@ namespace TestCaseTransformer
     {
         static void Main(string[] args)
         {
-            string inputPath = "input/input";
-            string outputPath = "output/output";
+            string basePath = "";//Set to base folder path.
+            string inputPath = $"{basePath}input/input";
+            string outputPath = $"{basePath}output/output";
             string format = "txt";
             int i = 0;
             int o = 0;
-            var files = Directory.EnumerateFiles("tests");
-            Directory.CreateDirectory("input");
-            Directory.CreateDirectory("output");
+            var files = Directory.EnumerateFiles($"{basePath}/tests");
+            Directory.CreateDirectory($"{basePath}input");
+            Directory.CreateDirectory($"{basePath}output");
             foreach (var item in files)
             {
                 if (item.EndsWith("in"))
